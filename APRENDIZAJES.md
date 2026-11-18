@@ -6,22 +6,22 @@
 >
 > Este archivo forma parte de la calificación del reto (criterio *Comprensión*).
 
-**Aprendiz:** _tu nombre_
+**Aprendiz:** Juan Manuel Cobo Triviño
 
 ---
 
 ## Issue #1 · G1 Guía de estilo
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** MDN sobre propiedades personalizadas, Bootstrap sobre variables CSS y botones, y WebAIM Contrast Checker. Aprendí a declarar tokens reutilizables y comprobar que el texto cumpla WCAG.
 
 1. **Explica:** ¿qué ventaja tiene escribir los colores como variables en `:root` en vez de escribir el hex directamente en cada regla?
-   _Tu respuesta_
+   Las variables permiten conservar una única fuente de verdad. Si cambio `--eje-primario`, todos los componentes que lo usan pueden actualizarse sin buscar y reemplazar cada valor hexadecimal.
 
 2. **Experimenta y explica:** en DevTools selecciona el botón "Ver rutas", pestaña *Computed* (o *Calculado*) y busca `--bs-btn-bg`. ¿De dónde sale su valor? ¿Por qué cambiar `--bs-primary` no habría cambiado el color del botón?
-   _Tu respuesta_
+   `--bs-btn-bg` toma su valor de `--eje-primario` mediante la regla `.btn-primary` de nuestro CSS. Bootstrap tiene variables propias para cada tipo de botón, por eso cambiar solamente `--bs-primary` no garantiza el cambio.
 
 3. **¿Qué pasaría si…** enlazas `estilos.css` ANTES de `bootstrap.min.css` en el `<head>`? Pruébalo, describe lo que ves y vuelve a dejarlo como estaba.
-   _Tu respuesta_
+   La hoja de Bootstrap se cargaría después y podría sobrescribir las personalizaciones de `.btn-primary` y las variables. Por eso `estilos.css` debe cargarse al final, como ocurre ahora, para que nuestras reglas tengan prioridad.
 
 ---
 
