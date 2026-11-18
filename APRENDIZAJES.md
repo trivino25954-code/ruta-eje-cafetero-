@@ -68,16 +68,16 @@
 
 ## Issue #4 · G4 Filtros y eventos
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** MDN sobre `filter()`, funciones flecha, `includes()`, `addEventListener()`, eventos `input`, `dataset` y `aria-live`. Aprendí a encadenar filtros sin modificar los datos originales y a anunciar cambios de contenido.
 
 1. **Predice y comprueba:** después de ejecutar `filtrarPorTipo(rutas, 'cafe')` en la consola, ¿cuánto vale `rutas.length`? ¿Por qué?
-   _Tu respuesta_
+   `rutas.length` sigue siendo 11. `filter()` crea un arreglo nuevo con los elementos que cumplen la condición y no elimina ni modifica elementos del arreglo original.
 
 2. **Explica el recorrido:** describe paso a paso qué pasa desde que la persona hace clic en el botón "Cultura" hasta que aparecen las tarjetas nuevas. Menciona: el evento, `estado`, `aplicarFiltros()`, `filtrarPorTipo()` y `pintarRutas()`.
-   _Tu respuesta_
+   El `click` ejecuta su listener y guarda `cultura` en `estado.tipo`. Luego llama a `aplicarFiltros()`, que usa `filtrarPorTipo()` para crear un arreglo solo con rutas culturales y `buscarPorTexto()` para aplicar también el texto. Finalmente, `pintarRutas()` sustituye las tarjetas anteriores por las tarjetas obtenidas y actualiza el mensaje.
 
 3. **¿Qué pasaría si…** usas el evento `'change'` en lugar de `'input'` en el buscador? Pruébalo y describe la diferencia.
-   _Tu respuesta_
+   `input` filtra en cada pulsación o modificación del campo. `change` normalmente espera a que el valor pierda el foco o se confirme, por eso la actualización sería menos inmediata y la búsqueda sentiría menos fluida.
 
 ---
 

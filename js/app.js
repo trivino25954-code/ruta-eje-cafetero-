@@ -138,7 +138,8 @@ function pintarRutas(lista, contenedor, mensaje) {
  *   - Si no -> solo las rutas cuyo ruta.tipo sea igual a tipo.
  * ============================================================ */
 function filtrarPorTipo(lista, tipo) {
-  // TODO: implementar
+  if (tipo === 'todos') return [...lista];
+  return lista.filter((ruta) => ruta.tipo === tipo);
 }
 
 /* ============================================================
@@ -157,7 +158,14 @@ function filtrarPorTipo(lista, tipo) {
  *   - Si no -> las rutas cuyo nombre O municipio (normalizados) incluyan el texto.
  * ============================================================ */
 function buscarPorTexto(lista, texto) {
-  // TODO: implementar
+  const textoBuscado = normalizar(texto);
+  if (textoBuscado === '') return [...lista];
+
+  return lista.filter((ruta) => {
+    const nombre = normalizar(ruta.nombre);
+    const municipio = normalizar(ruta.municipio);
+    return nombre.includes(textoBuscado) || municipio.includes(textoBuscado);
+  });
 }
 
 /* ============================================================
@@ -214,10 +222,26 @@ function aplicarFiltros() {
  * ============================================================ */
 function iniciar() {
   const botones = document.querySelectorAll('[data-tipo]');
+  const buscador = document.querySelector('#buscador');
 
-  // TODO G4.3 - paso 1: eventos 'click' de los botones
+  botones.forEach((boton) => {
+    boton.addEventListener('click', () => {
+      estado.tipo = boton.dataset.tipo;
 
-  // TODO G4.3 - paso 2: evento 'input' del buscador
+      botones.forEach((b) => {
+        const activo = b === boton;
+        b.classList.toggle('active', activo);
+        b.setAttribute('aria-pressed', activo ? 'true' : 'false');
+      });
+
+      aplicarFiltros();
+    });
+  });
+
+  buscador.addEventListener('input', (evento) => {
+    estado.texto = evento.target.value;
+    aplicarFiltros();
+  });
 
   aplicarFiltros(); // pinta todas las rutas al cargar
 }
