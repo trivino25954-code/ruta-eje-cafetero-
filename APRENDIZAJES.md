@@ -27,16 +27,16 @@
 
 ## Issue #2 · G2 Componentes
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** la documentación de Bootstrap sobre navbar responsive y button groups, además de MDN sobre `aria-pressed` y atributos `data-*`. Aprendí a asociar el botón con el contenido que controla y a marcar visual y semánticamente el estado activo.
 
 1. **Explica:** ¿qué relación hay entre `data-bs-target="#menu"` en el botón y el `id="menu"` del div? ¿Quién lee ese atributo?
-   _Tu respuesta_
+   Ambos usan el mismo selector: `data-bs-target="#menu"` indica el elemento cuyo id es `menu`, y Bootstrap JavaScript lee ese atributo para abrirlo o cerrarlo.
 
 2. **Experimenta:** abre y cierra el menú en un ancho de celular y observa en DevTools el atributo `aria-expanded` del botón. ¿Qué pasa con su valor? ¿Para quién es útil esa información?
-   _Tu respuesta_
+   El valor cambia de `false` a `true` cuando el menú está abierto y vuelve a `false` al cerrarse. Es útil para lectores de pantalla y otras tecnologías de asistencia, porque comunican si el control desplegable está expandido.
 
 3. **¿Qué pasaría si…** en un botón de filtro escribes `data-tipo="café"` (con tilde)? Piensa en lo que hay en `datos.js` antes de responder.
-   _Tu respuesta_
+   El filtro no coincidiría correctamente con las rutas cuyo campo `tipo` es `cafe`, porque el valor incluiría una tilde. Los identificadores deben conservar exactamente el mismo texto que el dato de JavaScript.
 
 ---
 
