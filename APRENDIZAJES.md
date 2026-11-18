@@ -83,13 +83,13 @@
 
 ## Reto · Ordenar rutas
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** MDN sobre `sort()`, `localeCompare()`, la sintaxis spread y el evento `change`, además de la documentación de `node:test`. Aprendí a copiar antes de ordenar y a comprobar el comportamiento con pruebas propias.
 
 1. **Explica:** ¿por qué `ordenarRutas` hace `const copia = [...lista]` antes de `sort()`? ¿Qué le pasaría a `rutas` si no se copia? ¿Qué prueba tuya lo demuestra?
-   _Tu respuesta_
+   El spread crea un arreglo nuevo con los mismos elementos. Sin esta copia, `sort()` modificaría directamente `rutas` y cambiaría su orden global. La prueba "No modifica el arreglo original" verifica que los identificadores continúan en el mismo orden.
 
 2. **Explica:** en `copia.sort((a, b) => a.precio - b.precio)`, ¿qué significa que la función devuelva un número negativo, cero o positivo?
-   _Tu respuesta_
+   Un negativo significa que `a` debe ir antes que `b`, cero significa que son equivalentes para el criterio y un positivo significa que `b` debe ir antes que `a`.
 
 3. **Tus pruebas:** elige una de tus pruebas y explica qué error de programación detectaría si alguien dañara la función.
-   _Tu respuesta_
+   La prueba de precio detectaría si se elimina el cálculo comparativo o se desordena el arreglo, porque exige que el primer elemento tenga precio cero y el último tenga 150000.

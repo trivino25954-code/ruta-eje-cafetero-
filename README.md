@@ -6,7 +6,7 @@ y se pueden filtrar por tipo y buscar por nombre o municipio.
 
 - **Aprendiz:** juan manuel cobo triviño
 - **Ficha:** 3349882 · Tecnólogo en Análisis y Desarrollo de Software · SENA CDITI
-- **Sitio publicado (GitHub Pages):** _pega aquí tu enlace https://TU-USUARIO.github.io/rutas-eje-cafetero/_
+- **Sitio publicado (GitHub Pages):** https://trivino25954-code.github.io/ruta-eje-cafetero-/
 
 - **Lo que aprendí:** ver [APRENDIZAJES.md](APRENDIZAJES.md)
 

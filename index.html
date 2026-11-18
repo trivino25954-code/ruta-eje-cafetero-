@@ -68,7 +68,15 @@
           <input type="search" id="buscador" class="form-control" placeholder="Ej: Salento">
         </div>
 
-        <!-- RETO: aquí va el <select id="orden"> para ordenar (ver RETO.md) -->
+        <div class="col-sm-7 col-lg-3">
+          <label for="orden" class="form-label">Ordenar por</label>
+          <select id="orden" class="form-select">
+            <option value="">Sin orden</option>
+            <option value="nombre">Nombre</option>
+            <option value="precio">Precio</option>
+            <option value="duracion">Duración</option>
+          </select>
+        </div>
       </div>
 
       <!-- TODO G4.4 - Agrega aria-live="polite" a este párrafo para que el lector
