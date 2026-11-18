@@ -42,7 +42,7 @@
 
 ## Issue #3 · G3 Datos → tarjetas
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** MDN sobre template literals, `map()`, `join()`, `innerHTML` y el resumen de métodos de arrays de javascript.info. Aprendí que el HTML puede construirse dinámicamente a partir de un arreglo de objetos.
 
 1. **Predice y comprueba:** antes de ejecutarlas en la consola del navegador, escribe qué crees que devuelve cada línea. Después ejecútalas y anota el resultado real.
    ```js
@@ -53,16 +53,16 @@
    ```
    | Línea | Mi predicción | Resultado real |
    |---|---|---|
-   | 1 | | |
-   | 2 | | |
-   | 3 | | |
-   | 4 | | |
+   | 1 | ` [10, 20, 30] ` | `[10, 20, 30]` |
+   | 2 | ` abc ` | `abc` |
+   | 3 | ` a - b - c ` | `a - b - c` |
+   | 4 | `11` | `11` |
 
 2. **Experimenta y explica:** quita temporalmente `.join('')` de `pintarRutas`. ¿Qué aparece entre las tarjetas y por qué? (Pista: ¿qué hace `innerHTML` cuando le asignas un arreglo?). Vuelve a ponerlo.
-   _Tu respuesta_
+   Si se asigna el arreglo directamente a `innerHTML`, JavaScript puede convertir sus elementos separándolos por comas. Por eso `join('')` transforma el arreglo en un único HTML sin caracteres de separación.
 
 3. **Explica:** ¿por qué la tarjeta se escribe con comillas invertidas `` ` `` y no con comillas simples `' '`? ¿Qué hace `${ }`?
-   _Tu respuesta_
+   Las comillas invertidas permiten crear template literals en varias líneas. `${ruta.nombre}` ejecuta la expresión y inserta el valor correspondiente dentro del texto HTML.
 
 ---
 
